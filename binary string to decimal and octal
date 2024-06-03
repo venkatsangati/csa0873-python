@@ -1,0 +1,26 @@
+def binary_to_decimal(binary_str):
+    """Convert a binary string to a decimal number."""
+    return int(binary_str, 2)
+
+def decimal_to_octal(decimal_num):
+    """Convert a decimal number to an octal string."""
+    return oct(decimal_num)[2:]
+
+def main():
+    # Sample Input
+    binary_str = "1101"
+
+    # Convert binary to decimal
+    decimal_num = binary_to_decimal(binary_str)
+
+    # Convert decimal to octal
+    octal_str = decimal_to_octal(decimal_num)
+
+    # Sample Output
+    print(f"Given Number: {binary_str}")
+    print(f"Decimal Number: {decimal_num}")
+    print(f"Octal: {octal_str}")
+
+# Run the main function
+if __name__ == "__main__":
+    main()
