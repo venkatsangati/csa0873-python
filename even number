@@ -1,0 +1,6 @@
+def print_even_before_20(numbers):
+    for number in numbers:
+        if number == 20:
+            break
+        if number % 2 == 0:
+            print(number)
