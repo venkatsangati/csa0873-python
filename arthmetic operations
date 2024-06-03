@@ -1,0 +1,30 @@
+def perform_operations(a, b):
+    """Perform various arithmetic operations on two numbers."""
+    results = {
+        'Addition': a + b,
+        'Subtraction': a - b,
+        'Multiplication': a * b,
+        'Integer Division': a // b,
+        'Floor Division': a // b,
+        'Modulo Division': a % b
+    }
+    return results
+
+def print_results(results):
+    """Print the results of arithmetic operations."""
+    for operation, result in results.items():
+        print(f"{operation}: {result}")
+
+# Sample Input
+int_a = 10
+int_b = 3
+float_a = 10.5
+float_b = 3.2
+
+print("Operations on integers:")
+results = perform_operations(int_a, int_b)
+print_results(results)
+
+print("\nOperations on floats:")
+results = perform_operations(float_a, float_b)
+print_results(results)
