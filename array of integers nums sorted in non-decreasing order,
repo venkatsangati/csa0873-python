@@ -1,0 +1,37 @@
+def searchRange(nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    left = findBound(nums, target, True)
+    if left == len(nums) or nums[left] != target:
+        return [-1, -1]
+    right = findBound(nums, target, False)
+    return [left, right - 1]
+
+def findBound(nums, target, isFirst):
+    """
+    :type nums: List[int]
+    :type target: int
+    :type isFirst: bool
+    :rtype: int
+    """
+    left, right = 0, len(nums)
+    while left < right:
+        mid = left + (right - left) // 2
+        if nums[mid] == target:
+            if isFirst:
+                right = mid
+            else:
+                left = mid + 1
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid
+    return left
+
+# Example usage
+nums = [5, 7, 7, 8, 8, 10]
+target = 8
+print(searchRange(nums, target))  # Output: [3, 4]
